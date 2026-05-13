@@ -1,0 +1,8 @@
+{
+  "event_id": "550e8400-e29b-41d4-a716-446655440000",
+  "developer_id": "dev-123",
+  "metric_type": "commits",
+  "value": 10,
+  "repository": "org/repo-1",
+  "timestamp": "2026-05-12T10:30:00Z"
+}

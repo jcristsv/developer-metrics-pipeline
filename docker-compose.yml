@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack:2.3.2
+    container_name: localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=sqs,dynamodb
+      - DEFAULT_REGION=us-east-1
+      - EDGE_PORT=4566
+    volumes:
+      - "./infra/localstack/init-aws.sh:/etc/localstack/init-scripts/init-aws.sh"
+
+  processor:
+    build: ./services/processor
+    container_name: processor
+    environment:
+      - AWS_ENDPOINT=http://localstack:4566
+      - AWS_REGION=us-east-1
+      - QUEUE_RAW_EVENTS=raw-events
+      - QUEUE_PROCESSED_EVENTS=processed-events
+    depends_on:
+      - localstack
+
+  aggregator:
+    build: ./services/aggregator
+    container_name: aggregator
+    ports:
+      - "8080:8080"
+    environment:
+      - AWS_ENDPOINT=http://localstack:4566
+      - AWS_REGION=us-east-1
+      - QUEUE_PROCESSED_EVENTS=processed-events
+      - DYNAMO_TABLE_EVENTS=events
+      - DYNAMO_TABLE_SUMMARY=developer_summary
+    depends_on:
+      - localstack
