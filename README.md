@@ -34,7 +34,7 @@ Após o envio, verifique o resultado no navegador acessando o endpoint de summar
 
 ## 🎥 Demonstração
 O vídeo com a explicação técnica e demonstração do sistema funcionando pode ser acessado no link abaixo:
-- Vídeo: https://1drv.ms/f/c/700ffaf40eca8eb6/IgDtwZQYqr2jSba0NX_T1bhLASukYY8-jrISODNggRGTod4?e=wU5MXD
+- Vídeo: https://1drv.ms/v/c/700ffaf40eca8eb6/IQCPLCchSbeTQqjKb0YgM3ajATJO82a60yI4yw-rQ7QcnWg?e=IQX2XH
 - Slides apresentação: https://1drv.ms/p/c/700ffaf40eca8eb6/IQAlh3LOvsSGTID3xe_kCJP3AXwFMY8mDL0JeTkpuwpufmo?e=G6QFKq
 
 ## 🛠️🚀 O que faria diferente com mais tempo
